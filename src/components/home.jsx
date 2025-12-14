@@ -120,10 +120,10 @@ function Home() {
     </div>
 
     <nav className={`navbar${menuOpen ? " active" : ""}`}>
-    <a href="#home" className="nav-link">Home</a>
-    <a href="#features" className="nav-link">Features</a>
-    <a href="#about" className="nav-link">About</a>
-    <a href="#footer" className="nav-link">Contact</a>
+    <a href="/home" className="nav-link">Home</a>
+    <a href="/features" className="nav-link">Features</a>
+    <a href="/about" className="nav-link">About</a>
+    <a href="/contact" className="nav-link">Contact</a>
     <Link to="/upload" className="btn nav-link">Model</Link>
     </nav>
 
