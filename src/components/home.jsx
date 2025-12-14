@@ -166,6 +166,138 @@ function Home() {
     </Link>
     </motion.div>
     </section>
+
+    {/* Features Section */}
+        <section className="features" id="features" aria-label="Features">
+          <motion.div
+            className="heading"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            transition={{ duration: 1 }}
+          >
+            <h1 align="center" style={{ fontSize: "2rem", fontWeight: "bold" }}>Features</h1>
+            <p>
+          PlantPulse empowers farmers with AI-driven crop recommendations, disease detection,
+          and climate insights to make smarter, sustainable farming decisions.
+            </p>
+          </motion.div>
+
+          <div className="button-container0" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+            <Link to="/Weatherforcast" className="buttonn active">Weather Forcasting</Link>
+            <Link to="/upload" className="buttonn">Identify Diseases</Link>
+            <Link to="/guidepage" className="buttonn">Smart Farming Guidance</Link>
+          </div>
+
+          <div className="row" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '1200px', margin: '0 auto' }}>
+            {features.map((feature, index) => (
+          <motion.div
+            key={feature.title}
+            className={`feature-row ${index % 2 !== 0 ? "reverse" : ""}`}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            transition={{ duration: 0.8, delay: index * 0.1 }}
+          >
+            <div className="image">
+              <motion.img
+            src={feature.img}
+            alt={feature.title}
+            className="rounded-corner-image parallax-img"
+            style={{ y: yParallax }}
+            whileHover={{ scale: 1.05 }}
+              />
+            </div>
+            <div className="content">
+              <h1>{feature.title}</h1>
+              <p>{feature.desc}</p>
+              <Link to="#" className="all-btn">More Info</Link>
+            </div>
+          </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section className="about" id="about" aria-label="About">
+          <div className="responsive-container-block outer-container">
+            <div className="responsive-container-block inner-container">
+              <h1 className="text-blk section-head-text">Meet Our Team</h1>
+              <p className="text-blk section-subhead-text">
+                A passionate team of innovators blending agriculture and technology to help
+              </p>
+              <div className="responsive-container-block team-list">
+                {[
+                  { name: "Anish Bhaduri", role: "Web Developer", img: anishImg },
+                  { name: "Priantu Das", role: "ML Engineer", img: priantuImg },
+                  { name: "Nital Kumari", role: "UX/UI Designer", img: nitalImg },
+                  { name: "Biswajyoti Ray", role: "ML Engineer", img: biswajitImg },
+                  { name: "Aritra Kar", role: "ML Engineer", img: aritraImg },
+                ].map((member) => (
+                  <div key={member.name} className="responsive-cell-block team-card-container">
+                    <div className="team-card">
+                      <div className="img-wrapper">
+                        <img className="team-img" src={member.img} alt={member.name} />
+                      </div>
+                      <p className="text-blk name">{member.name}</p>
+                      <p className="text-blk position">{member.role}</p>
+                      <div className="social-media-links">
+                        <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+                          <img
+                            src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg"
+                            alt="LinkedIn"
+                          />
+                        </a>
+                        <a href="mailto:example@gmail.com">
+                          <img
+                            src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg"
+                            alt="Email"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+      <footer className="footer" id="footer" aria-label="Footer">
+        <div className="box-container">
+          <div className="box">
+            <h3>Quick Links</h3>
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+          </div>
+          <div className="box">
+            <h3>Extra Links</h3>
+            <a href="#">Ask Questions</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+          <div className="box">
+            <h3>Helpful Resources</h3>
+            <a href="#">FAQs</a>
+            <a href="#">User Guides</a>
+            <a href="#">Support Center</a>
+          </div>
+          <div className="box">
+            <h3>Stay Connected</h3>
+            <a href="#">Future Scope</a>
+            <a href="#">Community Forum</a>
+            <a href="#">Newsletter</a>
+          </div>
+        </div>
+
+        <div className="credit">
+          © 2025 <span>Plant Pulse</span> — All Rights Reserved
+        </div>
+      </footer>
     </div>
   );
 }
