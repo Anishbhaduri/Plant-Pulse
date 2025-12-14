@@ -1,0 +1,480 @@
+/* =============================
+   🌿 Smart Crop Doctor — Final Fixed FileUploader.css
+============================= */
+
+/* Reset / Base */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: transparent !important;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Root container */
+.file-uploader-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Background video */
+.farm-video {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+  filter: brightness(0.65) saturate(1.1) contrast(1.05);
+  background-color: transparent;
+}
+
+/* Dark transparent overlay for contrast */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 40, 10, 0.2),
+    rgba(0, 15, 5, 0.7)
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Header */
+.upload-header {
+  margin-top: 72px;
+  padding: 0 1rem;
+  animation: fadeIn 1s ease;
+}
+.page-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #dcffe2;
+  text-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+.subtitle {
+  color: #cfffdb;
+  max-width: 820px;
+  margin: 0 auto;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* Upload section */
+.UploadFile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  z-index: 10;
+  margin-top: 24px;
+}
+
+/* Back button */
+.back-home-btn {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  padding: 8px 14px;
+  border-radius: 28px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.4);
+  color: #dfffe0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+.back-home-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,255,150,0.3);
+}
+
+/* Upload card */
+.FileUploaderDiv {
+  width: min(520px, 92%);
+  margin-top: 32px;
+  background: rgba(255,255,255,0.06);
+  border: 2px dashed rgba(150,255,180,0.25);
+  border-radius: 18px;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px) saturate(120%);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.FileUploaderDiv:hover {
+  border-color: rgba(0,255,150,0.5);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 40px rgba(0,255,150,0.2);
+}
+
+/* Upload icon */
+.uploadIMG {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 20px rgba(0,255,150,0.2));
+}
+
+/* Text inside card */
+.uploadedDataInfoDiv { text-align: center; }
+.big { font-size: 1.1rem; font-weight: 600; color: #eaffea; }
+.small { color: #c9ffd0; opacity: 0.85; font-size: 0.95rem; }
+
+/* File info */
+.file-name, .file-type {
+  color: #eaffea;
+  margin: 4px 0;
+}
+.delete-text {
+  color: #ffb3b3;
+  cursor: pointer;
+  margin-top: 6px;
+  font-weight: 700;
+}
+.delete-text:hover {
+  text-shadow: 0 0 12px rgba(255,80,80,0.6);
+}
+
+/* Buttons */
+.submitButton, .secondary-btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 28px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+.submitButton {
+  background: linear-gradient(135deg, #00a859, #4caf50);
+  color: #012a09;
+  box-shadow: 0 10px 30px rgba(0,170,90,0.25);
+  margin-top: 18px;
+}
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 44px rgba(0,200,120,0.25);
+}
+.submitButton:disabled { opacity: 0.7; cursor: not-allowed; }
+
+.secondary-btn {
+  background: rgba(255,255,255,0.1);
+  color: #eaffea;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.secondary-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Spinner */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255,255,255,0.25);
+  border-top-color: #00ff99;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Result text */
+.ptagDisease {
+  margin-top: 18px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.35);
+  color: #eaffea;
+  box-shadow: 0 8px 20px rgba(0,170,90,0.2);
+}
+
+/* Error */
+.errorMsg {
+  margin-top: 10px;
+  color: #ffdede;
+  font-weight: 700;
+}
+
+/* Info section */
+/* 🌱 Info / Mission Section - Enhanced */
+.info-section {
+  margin-top: 60px;
+  padding: 80px 1rem;
+  background: linear-gradient(180deg, rgba(0, 30, 10, 0.85), rgba(0, 50, 20, 0.85));
+  backdrop-filter: blur(6px);
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.35);
+}
+
+.info-content {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #eaffea;
+  text-align: center;
+}
+
+.info-content h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #b0ffb9;
+  margin-bottom: 14px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.info-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #dfffe2;
+  opacity: 0.96;
+  margin-bottom: 20px;
+}
+
+/* optional small subtitle paragraphs */
+.info-content .subtext {
+  font-size: 0.98rem;
+  color: #baf7c2;
+  opacity: 0.9;
+  margin-top: 8px;
+}
+
+/* glowing image effect */
+.info-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(0, 255, 100, 0.7);
+  margin-top: 24px;
+  box-shadow: 0 0 30px rgba(0, 255, 120, 0.25);
+  animation: softGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes softGlow {
+  from {
+    box-shadow: 0 0 20px rgba(0, 255, 120, 0.15);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(0, 255, 120, 0.4);
+  }
+}
+
+
+.info-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(0,170,90,0.9);
+  margin-top: 20px;
+  box-shadow: 0 0 26px rgba(0,170,90,0.25);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .page-title { font-size: 2rem; margin-top: 24px; }
+  .subtitle { font-size: 0.95rem; }
+  .FileUploaderDiv { width: 90%; padding: 28px; }
+  .uploadIMG { width: 56px; height: 56px; }
+  .info-img { width: 96px; height: 96px; }
+}
+/* 🌱 Info Section (Already Added Previously — Keep It) */
+/* Add fade animation + visibility enhancements */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-section {
+  animation: fadeUp 1.3s ease-out both;
+}
+
+/* 🌍 Footer Section */
+.footer-section {
+  background: rgba(0, 20, 10, 0.9);
+  color: #c8ffd0;
+  text-align: center;
+  padding: 18px 10px;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(0, 255, 120, 0.15);
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.35);
+  position: relative;
+  z-index: 10;
+}
+
+.footer-section strong {
+  color: #7bff9a;
+  font-weight: 700;
+}
+
+.footer-section p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.footer-section p::after {
+  content: " 🌿";
+  animation: leafGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes leafGlow {
+  from {
+    filter: drop-shadow(0 0 5px rgba(0, 255, 100, 0.2));
+  }
+  to {
+    filter: drop-shadow(0 0 15px rgba(0, 255, 100, 0.6));
+  }
+}
+
+/* 🌾 Responsive Footer */
+@media (max-width: 768px) {
+  .footer-section {
+    font-size: 0.9rem;
+    padding: 14px 8px;
+  }
+}
+
+
+
+/* --- Intro popup --- */
+.intro-popup {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 20, 5, 0.8);
+  z-index: 50;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.8s ease;
+}
+
+.intro-card {
+  background: linear-gradient(180deg, #013c16, #024e20);
+  padding: 40px 50px;
+  border-radius: 20px;
+  text-align: center;
+  color: #dfffe0;
+  max-width: 600px;
+  box-shadow: 0 0 40px rgba(0, 255, 100, 0.2);
+  animation: popIn 0.8s ease;
+}
+
+.intro-card h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #afffaf;
+  text-shadow: 0 4px 14px rgba(0, 255, 100, 0.4);
+}
+
+.intro-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-top: 16px;
+  border: 2px solid #00ff99;
+  box-shadow: 0 0 20px rgba(0, 255, 100, 0.3);
+}
+
+/* 🌱 Intro Popup Card */
+.intro-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 20, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  transition: opacity 0.5s ease;
+}
+
+.intro-card {
+  background: rgba(0, 40, 0, 0.85);
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  color: #e6ffe6;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 0 25px rgba(0, 255, 128, 0.25);
+  animation: fadeIn 1s ease;
+}
+
+.intro-card h2 {
+  color: #75ff9a;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intro-card .subtext {
+  color: #bfffcf;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.intro-img {
+  width: 120px;
+  margin-top: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* 🌿 Continue Button */
+.continue-btn {
+  margin-top: 1.5rem;
+  margin-left: 40px; /* ⬅️ Add this line — moves button slightly to the right */
+  background: linear-gradient(90deg, #00a859, #4ab2ff);
+  border: none;
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 168, 89, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.continue-btn:hover {
+  transform: translateX(5px); /* ✨ slight movement effect */
+  box-shadow: 0 6px 20px rgba(0, 255, 128, 0.5);
+}
+
+
+/* Hidden section animation */
+.hidden-section {
+  opacity: 0;
+  transform: translateY(100px);
+  pointer-events: none;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.visible-section {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+

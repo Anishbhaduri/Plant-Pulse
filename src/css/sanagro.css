@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* ===============================
+   Global Design Tokens
+   =============================== */
+:root {
+  --primary: #2f855a;        /* enterprise green */
+  --secondary: #3182ce;      /* enterprise blue */
+  --bg: #f4f7f6;             /* soft neutral background */
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --text-main: #1a202c;
+  --text-muted: #718096;
+  --radius: 16px;
+}
+
+/* ===============================
+   Base Reset
+   =============================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* ===============================
+   Layout
+   =============================== */
+.enterprise-layout {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ===============================
+   Header (Top Bar)
+   =============================== */
+.enterprise-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.enterprise-header h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Icon buttons (menu etc.) */
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.icon-btn:hover {
+  background: #edfdf6;
+}
+
+/* Compare toggle */
+.compare-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #edfdf6;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.compare-toggle.active {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* ===============================
+   Sidebar (Left Navigation)
+   =============================== */
+.enterprise-sidebar {
+  width: 280px;
+  background: var(--card);
+  border-right: 1px solid var(--border);
+  padding: 96px 16px 20px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.enterprise-sidebar h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+/* Crop nav item */
+.crop-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, border 0.2s ease;
+}
+
+.crop-nav-item:hover {
+  background: #f0fff4;
+  border-color: #c6f6d5;
+}
+
+.crop-nav-item img {
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.crop-nav-item strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.crop-nav-item span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ===============================
+   Main Content Area
+   =============================== */
+.enterprise-main {
+  flex: 1;
+  padding: 104px 36px 36px;
+  overflow-y: auto;
+}
+
+/* ===============================
+   Cards
+   =============================== */
+.enterprise-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.enterprise-card h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.enterprise-card p {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+/* Hero / welcome card */
+.enterprise-card.hero {
+  text-align: center;
+  padding: 60px 48px;
+}
+
+/* ===============================
+   Crop Header (Image + Title)
+   =============================== */
+.crop-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.crop-header img {
+  width: 96px;
+  height: 96px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.crop-header h2 {
+  margin: 0;
+}
+
+.crop-header p {
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+/* ===============================
+   Helper / Hint Text
+   =============================== */
+.hint {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ===============================
+   Responsive (Tablet & below)
+   =============================== */
+@media (max-width: 1024px) {
+  .enterprise-sidebar {
+    width: 240px;
+  }
+
+  .enterprise-main {
+    padding: 100px 24px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .enterprise-layout {
+    flex-direction: column;
+  }
+
+  .enterprise-sidebar {
+    position: fixed;
+    left: 0;
+    top: 72px;
+    height: calc(100vh - 72px);
+    z-index: 900;
+  }
+
+  .enterprise-main {
+    padding: 96px 20px 20px;
+  }
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.back-btn:hover {
+  background: #f0fdf4;
+}
