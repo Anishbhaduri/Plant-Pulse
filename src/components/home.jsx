@@ -128,21 +128,29 @@ function Home() {
     </nav>
 
     {/* ✅ ADDED Logout Button */}
-    <button
-    onClick={handleLogout}
+   <button
+  onClick={handleLogout}
+  style={{
+    background: "transparent",
+    border: "none",
+    cursor: "pointer",
+    padding: "6px",
+    display: "flex",
+    alignItems: "center",
+  }}
+  title="Logout"
+>
+  <img
+    src="https://www.svgrepo.com/show/13695/logout.svg"
+    alt="Logout"
     style={{
-      marginLeft: "1rem",
-      padding: "0.4rem 0.9rem",
-      background: "#e74c3c",
-      color: "#fff",
-      border: "none",
-      borderRadius: "6px",
-      cursor: "pointer",
-      fontWeight: "600",
+      width: "24px",
+      height: "24px",
+      filter: "grayscale(100%) brightness(0)",
     }}
-    >
-    Logout
-    </button>
+  />
+</button>
+
 
     <button
     id="menu-btn"
@@ -230,11 +238,11 @@ function Home() {
               </p>
               <div className="responsive-container-block team-list">
                 {[
-                  { name: "Anish Bhaduri", role: "Web Developer", img: anishImg },
-                  { name: "Priantu Das", role: "ML Engineer", img: priantuImg },
-                  { name: "Nital Kumari", role: "UX/UI Designer", img: nitalImg },
-                  { name: "Biswajyoti Ray", role: "ML Engineer", img: biswajitImg },
-                  { name: "Aritra Kar", role: "", img: aritraImg },
+                  { name: "Anish Bhaduri", role: "Web Developer", img: anishImg, linkedin: "https://linkedin.com/in/anish-bhaduri", email: "anish@gmail.com" },
+                  { name: "Priantu Das", role: "ML Engineer", img: priantuImg, linkedin: "https://linkedin.com/in/priantu-das", email: "priantu@gmail.com" },
+                  { name: "Nital Kumari", role: "UX/UI Designer", img: nitalImg, linkedin: "https://linkedin.com/in/nital-kumari", email: "nital@gmail.com" },
+                  { name: "Biswajyoti Ray", role: "ML Engineer", img: biswajitImg, linkedin: "https://linkedin.com/in/biswajyoti-ray", email: "biswajyoti@gmail.com" },
+                  { name: "Aritra Kar", role: "", img: aritraImg, linkedin: "https://linkedin.com/in/aritra-kar", email: "aritra@gmail.com" },
                 ].map((member) => (
                   <div key={member.name} className="responsive-cell-block team-card-container">
                     <div className="team-card">
@@ -244,13 +252,13 @@ function Home() {
                       <p className="text-blk name">{member.name}</p>
                       <p className="text-blk position">{member.role}</p>
                       <div className="social-media-links">
-                        <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+                        <a href={member.linkedin} target="_blank" rel="noreferrer">
                           <img
                             src="https://www.svgrepo.com/show/475661/linkedin-color.svg"
                             alt="LinkedIn"
                           />
                         </a>
-                        <a href="mailto:example@gmail.com">
+                        <a href={`mailto:${member.email}`}>
                           <img
                             src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg"
                             alt="Email"
@@ -265,7 +273,7 @@ function Home() {
           </div>
         </section>
 
-        {/* Footer */}
+        {/* Footer */}}
       <footer className="footer" id="footer" aria-label="Footer">
         <div className="box-container">
           <div className="box">
