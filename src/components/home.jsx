@@ -234,7 +234,7 @@ function Home() {
                   { name: "Priantu Das", role: "ML Engineer", img: priantuImg },
                   { name: "Nital Kumari", role: "UX/UI Designer", img: nitalImg },
                   { name: "Biswajyoti Ray", role: "ML Engineer", img: biswajitImg },
-                  { name: "Aritra Kar", role: "ML Engineer", img: aritraImg },
+                  { name: "Aritra Kar", role: "", img: aritraImg },
                 ].map((member) => (
                   <div key={member.name} className="responsive-cell-block team-card-container">
                     <div className="team-card">
@@ -246,7 +246,7 @@ function Home() {
                       <div className="social-media-links">
                         <a href="https://linkedin.com" target="_blank" rel="noreferrer">
                           <img
-                            src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg"
+                            src="https://www.svgrepo.com/show/475661/linkedin-color.svg"
                             alt="LinkedIn"
                           />
                         </a>
