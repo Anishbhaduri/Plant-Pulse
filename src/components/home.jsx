@@ -8,7 +8,7 @@ import anishImg from "../assets/images/anish.jpg";
 import priantuImg from "../assets/images/priantu.jpg";
 import nitalImg from "../assets/images/nital.jpg";
 import biswajitImg from "../assets/images/biswajit.jpg";
-// import aritraImg from "../assets/images/aritra.jpg";
+import aritraImg from "../assets/images/aritra.jpg";
 import Innovative from "../assets/images/Innovative.webp";
 import plant_disease from "../assets/images/plant_disease.webp";
 import "../css/home.css";
@@ -312,13 +312,13 @@ Empowering farmers with technology that works in the field, not just in theory â
                   linkedin: "https://linkedin.com/in/biswajyoti-ray",
                   email: "biswajyoti@gmail.com",
                 },
-                // {
-                //   name: "Aritra Kar",
-                //   role: "Supporter",
-                //   // img: weather ,
-                //   linkedin: "https://linkedin.com/in/aritra-kar",
-                //   email: "aritra@gmail.com",
-                // },
+                {
+                  name: "Aritra Kar",
+                  role: "Supporter",
+                  img: aritraImg,
+                  linkedin: "https://linkedin.com/in/aritra-kar",
+                  email: "aritra@gmail.com",
+                },
               ].map((member) => (
                 <div
                   key={member.name}
