@@ -134,13 +134,13 @@ Empowering farmers with technology that works in the field, not just in theory â
           <a href="#contact" className="nav-link">
             Contact
           </a>
-          <Link to="#upload" className="btn nav-link">
+          <Link to="/upload" className="btn nav-link">
             Model
           </Link>
         </nav>
 
         {/* âœ… ADDED Logout Button */}
-        <button
+        {/* <button
           onClick={handleLogout}
           style={{
             background: "transparent",
@@ -161,7 +161,8 @@ Empowering farmers with technology that works in the field, not just in theory â
               filter: "grayscale(100%) brightness(0)",
             }}
           />
-        </button>
+        </button> */}
+         
 
         <button
           id="menu-btn"
@@ -313,8 +314,8 @@ Empowering farmers with technology that works in the field, not just in theory â
                 },
                 {
                   name: "Aritra Kar",
-                  role: "",
-                  img: aritraImg,
+                  role: "Supporter",
+                  img: nitalImg ,
                   linkedin: "https://linkedin.com/in/aritra-kar",
                   email: "aritra@gmail.com",
                 },
