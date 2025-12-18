@@ -8,7 +8,7 @@ import anishImg from "../assets/images/anish.jpg";
 import priantuImg from "../assets/images/priantu.jpg";
 import nitalImg from "../assets/images/nital.jpg";
 import biswajitImg from "../assets/images/biswajit.jpg";
-import aritraImg from "../assets/images/aritra.jpg";
+// import aritraImg from "../assets/images/aritra.jpg";
 import Innovative from "../assets/images/Innovative.webp";
 import plant_disease from "../assets/images/plant_disease.webp";
 import "../css/home.css";
